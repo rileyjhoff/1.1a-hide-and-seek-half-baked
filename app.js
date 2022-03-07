@@ -52,10 +52,8 @@ function getRandomHidingSpot() {
     const index = Math.floor(Math.random() * hidingPlaces.length);
     // console.log(index);
     // use the random index above and the array of hidingPlaces to get a random hiding place string
-    let correctSpot = hidingPlaces[index];
-    // console.log(correctSpot);
     // return that random hiding place string
-    return correctSpot;
+    return hidingPlaces[index];
 }
 
 // to validate that correctSpot is random and console logging a string
