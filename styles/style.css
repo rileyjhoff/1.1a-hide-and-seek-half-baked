@@ -136,3 +136,9 @@ footer {
     content: '😃';
     position: absolute;
 }
+
+.second-section {
+    display: float;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+}

@@ -11,16 +11,24 @@ const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
 const winsEl = document.getElementById('wins');
 
+const treeCounter = document.getElementById('tree-guesses');
+const boulderCounter = document.getElementById('boulder-guesses');
+const shedCounter = document.getElementById('shed-guesses');
 
 let correctGuesses = 0;
 let totalGuesses = 0;
+let treeGuesses = 0;
+let boulderGuesses = 0;
+let shedGuesses = 0;
 
-shedButton.addEventListener('click', () => {
+
+boulderButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
     // console.log(correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
-    handleGuess(shedContainer, correctSpot);
+    handleGuess(boulderContainer, correctSpot);
+    spotCounter(boulderContainer);
 });
 
 treeButton.addEventListener('click', () => {
@@ -29,14 +37,16 @@ treeButton.addEventListener('click', () => {
     // console.log(correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(treeContainer, correctSpot);
+    spotCounter(treeContainer);
 });
 
-boulderButton.addEventListener('click', () => {
+shedButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
     // console.log(correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
-    handleGuess(boulderContainer, correctSpot);
+    handleGuess(shedContainer, correctSpot);
+    spotCounter(shedContainer);
 });
 
 
@@ -79,4 +89,17 @@ function handleGuess(userGuess, correctSpot) {
     totalEl.textContent = totalGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
     winsEl.textContent = correctGuesses;
+}
+
+function spotCounter(userGuess) {
+    if (userGuess === treeContainer) {
+        treeGuesses++;
+        treeCounter.textContent = treeGuesses;
+    } else if (userGuess === boulderContainer){
+        boulderGuesses++;
+        boulderCounter.textContent = boulderGuesses;
+    } else if (userGuess === shedContainer){
+        shedGuesses++;
+        shedCounter.textContent = shedGuesses;
+    }
 }
