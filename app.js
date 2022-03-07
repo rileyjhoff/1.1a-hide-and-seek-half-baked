@@ -34,6 +34,7 @@ boulderButton.addEventListener('click', () => {
     let correctSpot = getRandomHidingSpot();
     console.log(correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    handleGuess(boulderContainer, correctSpot);
 });
 
 
@@ -67,7 +68,7 @@ function handleGuess(userGuess, correctSpot) {
     // then increment the guesses
     totalGuesses++;
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
-    const correctContainer = document.getElementById('${correctSpot}-container')
+    const correctContainer = document.getElementById(`${correctSpot}-container`);
     // then add the .face css class to that element so that the face shows up
     correctContainer.classList.add('face');
     // then if the user guess is correct, increment the correct guesses
