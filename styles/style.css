@@ -152,7 +152,7 @@ footer {
 .stretch-pt2 {
     display: flex;
     flex-flow: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .stretch-pt2 textarea {

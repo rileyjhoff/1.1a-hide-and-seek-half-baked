@@ -70,14 +70,34 @@ shedButton.addEventListener('click', () => {
     hidingHistory(correctSpot);
 });
 
+lionButton.addEventListener('click', () => {
+    // get a random item to call the 'correct spot'
+    let correctSpot = getRandomHidingSpot();
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    handleGuess(lionContainer, correctSpot);
+    spotCounter(lionContainer);
+    guessHistoryEl.append(totalGuesses + '. Lion' + '\n');
+    hidingHistory(correctSpot);
+});
 
+dogButton.addEventListener('click', () => {
+    // get a random item to call the 'correct spot'
+    let correctSpot = getRandomHidingSpot();
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    handleGuess(dogContainer, correctSpot);
+    spotCounter(dogContainer);
+    guessHistoryEl.append(totalGuesses + '. Dog' + '\n');
+    hidingHistory(correctSpot);
+});
 
 function getRandomHidingSpot() {
     // initialize state
     const hidingPlaces = [
         'tree',
         'shed',
-        'boulder'
+        'boulder',
+        'lion',
+        'dog'
     ];
     const index = Math.floor(Math.random() * hidingPlaces.length);
     // use the random index above and the array of hidingPlaces to get a random hiding place string
@@ -91,6 +111,8 @@ function handleGuess(userGuess, correctSpot) {
     shedContainer.classList.remove('face');
     treeContainer.classList.remove('face');
     boulderContainer.classList.remove('face');
+    lionContainer.classList.remove('face');
+    dogContainer.classList.remove('face');
     // then increment the guesses
     totalGuesses++;
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
@@ -117,6 +139,12 @@ function spotCounter(userGuess) {
     } else if (userGuess === shedContainer){
         shedGuesses++;
         shedGuessCounter.textContent = shedGuesses;
+    } else if (userGuess === lionContainer){
+        shedGuesses++;
+        lionGuessCounter.textContent = shedGuesses;
+    } else if (userGuess === dogContainer){
+        shedGuesses++;
+        dogGuessCounter.textContent = shedGuesses;
     }
 }
 
@@ -133,5 +161,13 @@ function hidingHistory(correctSpot) {
         shedHiding++;
         shedCorrectCounter.textContent = shedHiding;
         hidingHistoryEl.append(totalGuesses + '. Shed' + '\n');
+    } else if (correctSpot === 'lion'){
+        shedHiding++;
+        lionCorrectCounter.textContent = shedHiding;
+        hidingHistoryEl.append(totalGuesses + '. Lion' + '\n');
+    } else if (correctSpot === 'dog'){
+        shedHiding++;
+        dogCorrectCounter.textContent = shedHiding;
+        hidingHistoryEl.append(totalGuesses + '. Dog' + '\n');
     }
 }
