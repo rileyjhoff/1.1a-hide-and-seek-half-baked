@@ -31,6 +31,9 @@ const winsEl = document.getElementById('wins');
 const guessHistoryEl = document.getElementById('guess-history');
 const hidingHistoryEl = document.getElementById('hiding-history');
 
+guessHistoryEl.scrollTop = guessHistoryEl.scrollHeight;
+hidingHistoryEl.scrollTop = hidingHistoryEl.scrollHeight;
+
 let correctGuesses = 0;
 let totalGuesses = 0;
 let treeGuesses = 0;
@@ -47,7 +50,9 @@ treeButton.addEventListener('click', () => {
     handleGuess(treeContainer, correctSpot);
     spotCounter(treeContainer);
     guessHistoryEl.append(totalGuesses + '. Tree' + '\n');
+    guessHistoryEl.scrollTop = guessHistoryEl.scrollHeight;
     hidingHistory(correctSpot);
+    hidingHistoryEl.scrollTop = hidingHistoryEl.scrollHeight;
 });
 
 boulderButton.addEventListener('click', () => {
@@ -57,7 +62,9 @@ boulderButton.addEventListener('click', () => {
     handleGuess(boulderContainer, correctSpot);
     spotCounter(boulderContainer);
     guessHistoryEl.append(totalGuesses + '. Boulder' + '\n');
+    guessHistoryEl.scrollTop = guessHistoryEl.scrollHeight;
     hidingHistory(correctSpot);
+    hidingHistoryEl.scrollTop = hidingHistoryEl.scrollHeight;
 });
 
 shedButton.addEventListener('click', () => {
@@ -67,7 +74,9 @@ shedButton.addEventListener('click', () => {
     handleGuess(shedContainer, correctSpot);
     spotCounter(shedContainer);
     guessHistoryEl.append(totalGuesses + '. Shed' + '\n');
+    guessHistoryEl.scrollTop = guessHistoryEl.scrollHeight;
     hidingHistory(correctSpot);
+    hidingHistoryEl.scrollTop = hidingHistoryEl.scrollHeight;
 });
 
 lionButton.addEventListener('click', () => {
@@ -77,7 +86,10 @@ lionButton.addEventListener('click', () => {
     handleGuess(lionContainer, correctSpot);
     spotCounter(lionContainer);
     guessHistoryEl.append(totalGuesses + '. Lion' + '\n');
+    guessHistoryEl.scrollTop = guessHistoryEl.scrollHeight;
     hidingHistory(correctSpot);
+    hidingHistoryEl.scrollTop = hidingHistoryEl.scrollHeight;
+
 });
 
 dogButton.addEventListener('click', () => {
@@ -87,7 +99,9 @@ dogButton.addEventListener('click', () => {
     handleGuess(dogContainer, correctSpot);
     spotCounter(dogContainer);
     guessHistoryEl.append(totalGuesses + '. Dog' + '\n');
+    guessHistoryEl.scrollTop = guessHistoryEl.scrollHeight;
     hidingHistory(correctSpot);
+    hidingHistoryEl.scrollTop = hidingHistoryEl.scrollHeight;
 });
 
 function getRandomHidingSpot() {
