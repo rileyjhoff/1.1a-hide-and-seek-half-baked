@@ -52,8 +52,6 @@ treeButton.addEventListener('click', () => {
     let correctSpots = getRandomHidingSpot();
     let correctSpot1 = correctSpots[0];
     let correctSpot2 = correctSpots[1];
-    console.log(correctSpot1);
-    console.log(correctSpot2);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(treeContainer, correctSpot1, correctSpot2);
     spotCounter(treeContainer);
@@ -70,8 +68,7 @@ boulderButton.addEventListener('click', () => {
     let correctSpots = getRandomHidingSpot();
     let correctSpot1 = correctSpots[0];
     let correctSpot2 = correctSpots[1];
-    console.log(correctSpot1);
-    console.log(correctSpot2);    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(boulderContainer, correctSpot1, correctSpot2);
     spotCounter(boulderContainer);
     hidingHistory(correctSpot1);
@@ -87,8 +84,7 @@ shedButton.addEventListener('click', () => {
     let correctSpots = getRandomHidingSpot();
     let correctSpot1 = correctSpots[0];
     let correctSpot2 = correctSpots[1];
-    console.log(correctSpot1);
-    console.log(correctSpot2);    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(shedContainer, correctSpot1, correctSpot2);
     spotCounter(shedContainer);
     hidingHistory(correctSpot1);
@@ -104,8 +100,7 @@ lionButton.addEventListener('click', () => {
     let correctSpots = getRandomHidingSpot();
     let correctSpot1 = correctSpots[0];
     let correctSpot2 = correctSpots[1];
-    console.log(correctSpot1);
-    console.log(correctSpot2);    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(lionContainer, correctSpot1, correctSpot2);
     spotCounter(lionContainer);
     hidingHistory(correctSpot1);
@@ -121,8 +116,7 @@ dogButton.addEventListener('click', () => {
     let correctSpots = getRandomHidingSpot();
     let correctSpot1 = correctSpots[0];
     let correctSpot2 = correctSpots[1];
-    console.log(correctSpot1);
-    console.log(correctSpot2);    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(dogContainer, correctSpot1, correctSpot2);
     spotCounter(dogContainer);
     hidingHistory(correctSpot1);
