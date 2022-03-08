@@ -2,10 +2,15 @@
 const shedButton = document.getElementById('shed-button');
 const treeButton = document.getElementById('tree-button');
 const boulderButton = document.getElementById('boulder-button');
+const lionButton = document.getElementById('lion-button');
+const dogButton = document.getElementById('dog-button');
+
 
 const shedContainer = document.getElementById('shed-container');
 const treeContainer = document.getElementById('tree-container');
 const boulderContainer = document.getElementById('boulder-container');
+const lionContainer = document.getElementById('lion-container');
+const dogContainer = document.getElementById('dog-container');
 
 const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
