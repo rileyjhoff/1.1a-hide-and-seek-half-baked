@@ -12,17 +12,21 @@ const boulderContainer = document.getElementById('boulder-container');
 const lionContainer = document.getElementById('lion-container');
 const dogContainer = document.getElementById('dog-container');
 
-const totalEl = document.getElementById('total');
-const lossesEl = document.getElementById('losses');
-const winsEl = document.getElementById('wins');
-
 const treeGuessCounter = document.getElementById('tree-guesses');
 const boulderGuessCounter = document.getElementById('boulder-guesses');
 const shedGuessCounter = document.getElementById('shed-guesses');
+const lionGuessCounter = document.getElementById('lion-guesses');
+const dogGuessCounter = document.getElementById('dog-guesses');
 
 const treeCorrectCounter = document.getElementById('tree-correct');
 const boulderCorrectCounter = document.getElementById('boulder-correct');
 const shedCorrectCounter = document.getElementById('shed-correct');
+const lionCorrectCounter = document.getElementById('lion-correct');
+const dogCorrectCounter = document.getElementById('dog-correct');
+
+const totalEl = document.getElementById('total');
+const lossesEl = document.getElementById('losses');
+const winsEl = document.getElementById('wins');
 
 const guessHistoryEl = document.getElementById('guess-history');
 const hidingHistoryEl = document.getElementById('hiding-history');
