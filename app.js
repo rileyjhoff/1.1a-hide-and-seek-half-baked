@@ -11,9 +11,13 @@ const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
 const winsEl = document.getElementById('wins');
 
-const treeCounter = document.getElementById('tree-guesses');
-const boulderCounter = document.getElementById('boulder-guesses');
-const shedCounter = document.getElementById('shed-guesses');
+const treeGuessCounter = document.getElementById('tree-guesses');
+const boulderGuessCounter = document.getElementById('boulder-guesses');
+const shedGuessCounter = document.getElementById('shed-guesses');
+
+const treeCorrectCounter = document.getElementById('tree-correct');
+const boulderCorrectCounter = document.getElementById('boulder-correct');
+const shedCorrectCounter = document.getElementById('shed-correct');
 
 const guessHistoryEl = document.getElementById('guess-history');
 const hidingHistoryEl = document.getElementById('hiding-history');
@@ -23,7 +27,9 @@ let totalGuesses = 0;
 let treeGuesses = 0;
 let boulderGuesses = 0;
 let shedGuesses = 0;
-
+let treeHiding = 0;
+let boulderHiding = 0;
+let shedHiding = 0;
 
 treeButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
@@ -32,7 +38,7 @@ treeButton.addEventListener('click', () => {
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(treeContainer, correctSpot);
     spotCounter(treeContainer);
-    guessHistoryEl.append('Tree' + '\n');
+    guessHistoryEl.append(totalGuesses + '. Tree' + '\n');
     hidingHistory(correctSpot);
 });
 
@@ -43,7 +49,7 @@ boulderButton.addEventListener('click', () => {
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(boulderContainer, correctSpot);
     spotCounter(boulderContainer);
-    guessHistoryEl.append('Boulder' + '\n');
+    guessHistoryEl.append(totalGuesses + '. Boulder' + '\n');
     hidingHistory(correctSpot);
 });
 
@@ -54,7 +60,7 @@ shedButton.addEventListener('click', () => {
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(shedContainer, correctSpot);
     spotCounter(shedContainer);
-    guessHistoryEl.append('Shed' + '\n');
+    guessHistoryEl.append(totalGuesses + '. Shed' + '\n');
     hidingHistory(correctSpot);
 });
 
@@ -103,22 +109,28 @@ function handleGuess(userGuess, correctSpot) {
 function spotCounter(userGuess) {
     if (userGuess === treeContainer) {
         treeGuesses++;
-        treeCounter.textContent = treeGuesses;
+        treeGuessCounter.textContent = treeGuesses;
     } else if (userGuess === boulderContainer){
         boulderGuesses++;
-        boulderCounter.textContent = boulderGuesses;
+        boulderGuessCounter.textContent = boulderGuesses;
     } else if (userGuess === shedContainer){
         shedGuesses++;
-        shedCounter.textContent = shedGuesses;
+        shedGuessCounter.textContent = shedGuesses;
     }
 }
 
 function hidingHistory(correctSpot) {
     if (correctSpot === 'tree') {
-        hidingHistoryEl.append('Tree' + '\n');
+        treeHiding++;
+        treeCorrectCounter.textContent = treeHiding;
+        hidingHistoryEl.append(totalGuesses + '. Tree' + '\n');
     } else if (correctSpot === 'boulder'){
-        hidingHistoryEl.append('Boulder' + '\n');
+        boulderHiding++;
+        boulderCorrectCounter.textContent = boulderHiding;
+        hidingHistoryEl.append(totalGuesses + '. Boulder' + '\n');
     } else if (correctSpot === 'shed'){
-        hidingHistoryEl.append('Shed' + '\n');
+        shedHiding++;
+        shedCorrectCounter.textContent = shedHiding;
+        hidingHistoryEl.append(totalGuesses + '. Shed' + '\n');
     }
 }

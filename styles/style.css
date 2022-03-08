@@ -143,6 +143,12 @@ footer {
     justify-content: space-evenly;
 }
 
+.stretch-pt3 {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+}
+
 .stretch-pt2 {
     display: flex;
     flex-flow: wrap;
