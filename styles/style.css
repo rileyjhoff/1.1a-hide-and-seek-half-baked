@@ -137,8 +137,17 @@ footer {
     position: absolute;
 }
 
-.second-section {
-    display: float;
+.stretch-pt1 {
+    display: flex;
     flex-flow: wrap;
     justify-content: space-evenly;
+}
+
+#guess-history {
+    overflow: scroll;
+}
+
+.stretch-pt2 {
+    display: flex;
+    align-items: flex-start;
 }
