@@ -25,16 +25,6 @@ let boulderGuesses = 0;
 let shedGuesses = 0;
 
 
-boulderButton.addEventListener('click', () => {
-    // get a random item to call the 'correct spot'
-    let correctSpot = getRandomHidingSpot();
-    // console.log(correctSpot);
-    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
-    handleGuess(boulderContainer, correctSpot);
-    spotCounter(boulderContainer);
-    guessHistoryEl.append('Boulder' + '\n');
-});
-
 treeButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
@@ -43,6 +33,18 @@ treeButton.addEventListener('click', () => {
     handleGuess(treeContainer, correctSpot);
     spotCounter(treeContainer);
     guessHistoryEl.append('Tree' + '\n');
+    hidingHistory(correctSpot);
+});
+
+boulderButton.addEventListener('click', () => {
+    // get a random item to call the 'correct spot'
+    let correctSpot = getRandomHidingSpot();
+    // console.log(correctSpot);
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    handleGuess(boulderContainer, correctSpot);
+    spotCounter(boulderContainer);
+    guessHistoryEl.append('Boulder' + '\n');
+    hidingHistory(correctSpot);
 });
 
 shedButton.addEventListener('click', () => {
@@ -53,6 +55,7 @@ shedButton.addEventListener('click', () => {
     handleGuess(shedContainer, correctSpot);
     spotCounter(shedContainer);
     guessHistoryEl.append('Shed' + '\n');
+    hidingHistory(correctSpot);
 });
 
 
@@ -107,5 +110,15 @@ function spotCounter(userGuess) {
     } else if (userGuess === shedContainer){
         shedGuesses++;
         shedCounter.textContent = shedGuesses;
+    }
+}
+
+function hidingHistory(correctSpot) {
+    if (correctSpot === 'tree') {
+        hidingHistoryEl.append('Tree' + '\n');
+    } else if (correctSpot === 'boulder'){
+        hidingHistoryEl.append('Boulder' + '\n');
+    } else if (correctSpot === 'shed'){
+        hidingHistoryEl.append('Shed' + '\n');
     }
 }
