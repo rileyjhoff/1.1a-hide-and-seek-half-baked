@@ -34,7 +34,6 @@ let shedHiding = 0;
 treeButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
-    // console.log(correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(treeContainer, correctSpot);
     spotCounter(treeContainer);
@@ -45,7 +44,6 @@ treeButton.addEventListener('click', () => {
 boulderButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
-    // console.log(correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(boulderContainer, correctSpot);
     spotCounter(boulderContainer);
@@ -56,7 +54,6 @@ boulderButton.addEventListener('click', () => {
 shedButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
-    // console.log(correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess(shedContainer, correctSpot);
     spotCounter(shedContainer);
@@ -73,16 +70,11 @@ function getRandomHidingSpot() {
         'shed',
         'boulder'
     ];
-    // console.log(hidingPlaces);
     const index = Math.floor(Math.random() * hidingPlaces.length);
-    // console.log(index);
     // use the random index above and the array of hidingPlaces to get a random hiding place string
     // return that random hiding place string
     return hidingPlaces[index];
 }
-
-// to validate that correctSpot is random and console logging a string
-// getRandomHidingSpot();
 
 function handleGuess(userGuess, correctSpot) {
     // first, right after clicking, we need to remove the emoiji face from the previous hiding place that way we don't end up with more than one emoji face
