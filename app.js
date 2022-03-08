@@ -16,6 +16,7 @@ const boulderCounter = document.getElementById('boulder-guesses');
 const shedCounter = document.getElementById('shed-guesses');
 
 const guessHistoryEl = document.getElementById('guess-history');
+const hidingHistoryEl = document.getElementById('hiding-history');
 
 let correctGuesses = 0;
 let totalGuesses = 0;
